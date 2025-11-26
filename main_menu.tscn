@@ -1,0 +1,61 @@
+[gd_scene load_steps=10 format=3 uid="uid://pqnd1wmbtm0u"]
+
+[ext_resource type="Script" uid="uid://cqh14k0eug8wk" path="res://MainMenu.cs" id="1_06t4h"]
+[ext_resource type="Texture2D" uid="uid://t4hc735sdrd7" path="res://BG/Gemini_Generated_Image_w1eq4sw1eq4sw1eq.png" id="2_8qtwp"]
+[ext_resource type="Texture2D" uid="uid://d1di2i4lv1hye" path="res://buttons/normal/Start.png" id="3_dy7ct"]
+[ext_resource type="Texture2D" uid="uid://cx12fx35pfrg2" path="res://buttons/highlight/Start2.png" id="4_0o4t1"]
+[ext_resource type="Texture2D" uid="uid://ljydh7jakoh6" path="res://buttons/normal/options.png" id="5_0k4wn"]
+[ext_resource type="Texture2D" uid="uid://cfgwrg7nh7hft" path="res://buttons/highlight/options2.png" id="6_j5v2v"]
+[ext_resource type="Texture2D" uid="uid://dch4o0gakce3n" path="res://buttons/normal/quit2.png" id="7_iotk1"]
+[ext_resource type="Texture2D" uid="uid://bycfbxfntcqtd" path="res://buttons/highlight/quit.png" id="8_w44g7"]
+[ext_resource type="AudioStream" uid="uid://ufmp6qdh0hm3" path="res://Audio/ok.ogg" id="9_dy7ct"]
+
+[node name="Main Menu" type="Node2D"]
+script = ExtResource("1_06t4h")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(959, 540)
+scale = Vector2(1.86719, 1.04883)
+texture = ExtResource("2_8qtwp")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="ContButton" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Start" type="TextureButton" parent="ContButton"]
+layout_mode = 0
+offset_left = 410.0
+offset_top = 489.0
+offset_right = 584.0
+offset_bottom = 662.0
+action_mode = 0
+texture_normal = ExtResource("3_dy7ct")
+texture_hover = ExtResource("4_0o4t1")
+
+[node name="Options" type="TextureButton" parent="ContButton"]
+layout_mode = 0
+offset_left = 875.0
+offset_top = 607.0
+offset_right = 1049.0
+offset_bottom = 780.0
+texture_normal = ExtResource("5_0k4wn")
+texture_hover = ExtResource("6_j5v2v")
+
+[node name="Quit" type="TextureButton" parent="ContButton"]
+layout_mode = 0
+offset_left = 1374.0
+offset_top = 473.0
+offset_right = 1551.0
+offset_bottom = 698.0
+texture_normal = ExtResource("7_iotk1")
+texture_hover = ExtResource("8_w44g7")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_dy7ct")
+autoplay = true

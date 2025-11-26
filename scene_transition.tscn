@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8fcuhdwm88kl"]
+
+[ext_resource type="Script" uid="uid://dpji0jfe01ms8" path="res://SceneTransition.cs" id="1_gbkcp"]
+[ext_resource type="Texture2D" uid="uid://mdpi1cxb8ctv" path="res://punto de cambio/punto de cambio.png" id="2_7lvy5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cv4e2"]
+size = Vector2(70, 64)
+
+[node name="SceneTransition" type="Area2D"]
+script = ExtResource("1_gbkcp")
+NextScenePath = "C:/Users/OscarEze/Pictures/OneDrive - Universidad de Colima/Documentos/desde0/World/"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -31)
+shape = SubResource("RectangleShape2D_cv4e2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2, -39)
+texture = ExtResource("2_7lvy5")

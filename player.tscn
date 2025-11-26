@@ -1,53 +1,71 @@
-[gd_scene load_steps=99 format=4 uid="uid://by48jxp6g6b8o"]
+[gd_scene load_steps=120 format=4 uid="uid://by48jxp6g6b8o"]
 
 [ext_resource type="Texture2D" uid="uid://cwk6e5hb0j273" path="res://World/Tlacuachil/WalkTlacuchil1.png" id="1_1jxqw"]
 [ext_resource type="Script" uid="uid://cfno8do170l5p" path="res://Player.cs" id="1_dw050"]
 [ext_resource type="Texture2D" uid="uid://qyyc6cs6uyt7" path="res://World/DeadCave/IdleDeadSpawn1.png" id="2_2hmo1"]
 [ext_resource type="Texture2D" uid="uid://7nj1e5q4lt5" path="res://World/Tlacuachil/WalkTlacuchil2.png" id="2_dw050"]
 [ext_resource type="Texture2D" uid="uid://1bjm7k4wrqqj" path="res://World/Fall/FallCool1.png" id="2_iruf7"]
+[ext_resource type="Texture2D" uid="uid://b3r6v4go3a7fb" path="res://World/Boxing/2dBoxDerechaRrapida1.png" id="2_nevyh"]
 [ext_resource type="Texture2D" uid="uid://bh7cre0btccw2" path="res://World/Idle/Idle1.png" id="2_qtqh7"]
 [ext_resource type="Texture2D" uid="uid://dg3aln8bltjxy" path="res://World/Tlacuachil/WalkTlacuchil3.png" id="3_b26j0"]
+[ext_resource type="Texture2D" uid="uid://cp77vkclt2325" path="res://World/Boxing/2dBoxDerechaRrapida2.png" id="3_hhr50"]
 [ext_resource type="Texture2D" uid="uid://ckwtmmhfc611s" path="res://World/Fall/FallCool2.png" id="3_j5n4i"]
 [ext_resource type="Texture2D" uid="uid://ckkvypltcvceq" path="res://World/DeadCave/IdleDeadSpawn2.png" id="3_uygay"]
 [ext_resource type="Texture2D" uid="uid://62tdqi5olwlp" path="res://World/Fall/FallCool3.png" id="4_634y6"]
 [ext_resource type="Texture2D" uid="uid://bdnpq5prmr2f7" path="res://World/Jump/SaltoImage1.png" id="4_iruf7"]
 [ext_resource type="Texture2D" uid="uid://bhw007gf7hsew" path="res://World/Tlacuachil/WalkTlacuchil4.png" id="4_n7ghd"]
+[ext_resource type="Texture2D" uid="uid://c718pimxxbp72" path="res://World/Boxing/2dBoxDerechaRrapida3.png" id="4_nevyh"]
 [ext_resource type="Texture2D" uid="uid://07iwx2q4qtcd" path="res://World/DeadCave/IdleDeadSpawn3.png" id="4_rpay4"]
+[ext_resource type="Texture2D" uid="uid://h3v2pk6hynso" path="res://World/Boxing/2dBoxDerechaRrapida4.png" id="5_a5i73"]
 [ext_resource type="Texture2D" uid="uid://bbbgge0fgn6nh" path="res://World/Fall/FallCool4.png" id="5_efrwb"]
 [ext_resource type="Texture2D" uid="uid://b4hrc8b16ahju" path="res://World/Tlacuachil/WalkTlacuchil5.png" id="5_nvl01"]
 [ext_resource type="Texture2D" uid="uid://c2mutg2w8gasi" path="res://World/DeadCave/IdleDeadSpawn4.png" id="5_xfa3h"]
 [ext_resource type="Texture2D" uid="uid://dm3igoh5rlqkh" path="res://World/DeadCave/IdleDeadSpawn5.png" id="6_04g4e"]
 [ext_resource type="Texture2D" uid="uid://bpxnpiadwxpd8" path="res://World/Tlacuachil/WalkTlacuchil6.png" id="6_ivps1"]
+[ext_resource type="Texture2D" uid="uid://dr2lq2gwpdm8w" path="res://World/Boxing/2dBoxDerechaRrapida5.png" id="6_j7swm"]
 [ext_resource type="Texture2D" uid="uid://c8s4ms8lpfd7l" path="res://World/IdleSnow/Idle1.png" id="6_ny14h"]
+[ext_resource type="Texture2D" uid="uid://ddtqu1j0ruru4" path="res://World/Boxing/2dBoxDerechaRrapida6.png" id="7_bobas"]
 [ext_resource type="Texture2D" uid="uid://b24icaxp0ewwj" path="res://World/IdleSnow/Idle2.png" id="7_ibah8"]
 [ext_resource type="Texture2D" uid="uid://bfsjyw03iaj1r" path="res://World/DeadCave/IdleDeadSpawn6.png" id="7_lx1qc"]
 [ext_resource type="Texture2D" uid="uid://barraxhbxuu60" path="res://World/Tlacuachil/WalkTlacuchil7.png" id="7_urp6f"]
 [ext_resource type="Texture2D" uid="uid://d1vkn7uc1c3xr" path="res://World/IdleSnow/Idle3.png" id="8_3iwfv"]
 [ext_resource type="Texture2D" uid="uid://cvsp5qdh88517" path="res://World/DeadCave/IdleDeadSpawn7.png" id="8_elm0x"]
 [ext_resource type="Texture2D" uid="uid://c18xsc73n1aar" path="res://World/Jump/SaltoImage5.png" id="8_hiqhm"]
+[ext_resource type="Texture2D" uid="uid://br826vmxcg6dx" path="res://World/Boxing/2dBoxDerechaRrapida7.png" id="8_vmuuc"]
+[ext_resource type="Texture2D" uid="uid://b6oxoihsgmg8s" path="res://World/Boxing/2dBoxDerechaRrapida8.png" id="9_hhr50"]
 [ext_resource type="Texture2D" uid="uid://dfivgpljddprw" path="res://World/DeadCave/IdleDeadSpawn8.png" id="9_k7vj2"]
 [ext_resource type="Texture2D" uid="uid://l7hd4aokflfy" path="res://World/Jump/SaltoImage6.png" id="9_tkwlq"]
 [ext_resource type="Texture2D" uid="uid://fotr3b8sw6ac" path="res://World/DeadCave/notCanon/DeadCavePart17.png" id="10_dtw5u"]
+[ext_resource type="Texture2D" uid="uid://cpp45r5fjckd1" path="res://World/Boxing/2dBoxDerechaRrapida9.png" id="10_hhe1y"]
 [ext_resource type="Texture2D" uid="uid://d0pjy02ef5x8v" path="res://World/Jump/SaltoImage7.png" id="10_hl5qd"]
+[ext_resource type="Texture2D" uid="uid://ojqcppbfm3h2" path="res://World/Boxing/2dBoxDerechaRrapida10.png" id="11_6jk4c"]
 [ext_resource type="Texture2D" uid="uid://hh2nwjshyybl" path="res://World/Jump/SaltoImage8.png" id="11_ek41f"]
 [ext_resource type="Texture2D" uid="uid://cww5w3hyjsbwr" path="res://World/DeadCave/notCanon/DeadCavePart18.png" id="11_f37gn"]
+[ext_resource type="Texture2D" uid="uid://cpbarr3ytjh1f" path="res://World/Boxing/2dBoxDerechaRrapida11.png" id="12_8hr8l"]
 [ext_resource type="Texture2D" uid="uid://1ngc0wmwd0v" path="res://World/DeadCave/notCanon/DeadCavePart19.png" id="12_jccjf"]
 [ext_resource type="Texture2D" uid="uid://bm1p3h4p1a2p6" path="res://World/Jump/SaltoImage9.png" id="12_khis8"]
 [ext_resource type="Texture2D" uid="uid://1a06vsfyiblq" path="res://World/Jump/SaltoImage10.png" id="13_b88wv"]
+[ext_resource type="Texture2D" uid="uid://bv2u1h722s4o" path="res://World/Boxing/2dBoxDerechaRrapida12.png" id="13_c2etn"]
 [ext_resource type="Texture2D" uid="uid://b54thxfvqtx1a" path="res://World/DeadCave/notCanon/DeadCavePart20.png" id="13_qhi2v"]
+[ext_resource type="Texture2D" uid="uid://bd4467tf87g5o" path="res://World/Boxing/2dBoxDerechaRrapida13.png" id="14_cgqxi"]
 [ext_resource type="Texture2D" uid="uid://yo2yrlj4yfio" path="res://World/DeadCave/notCanon/DeadCavePart21.png" id="14_ipvpa"]
 [ext_resource type="Texture2D" uid="uid://c764h5rq04ax4" path="res://World/Jump/SaltoImage11.png" id="14_pgbbb"]
 [ext_resource type="Texture2D" uid="uid://mmjf4h1iexlp" path="res://World/Jump/SaltoImage12.png" id="15_331ug"]
+[ext_resource type="Texture2D" uid="uid://bkxwg64xe0s05" path="res://World/Boxing/2dBoxDerechaRrapida14.png" id="15_api4a"]
 [ext_resource type="Texture2D" uid="uid://dr48w64dr1ape" path="res://World/DeadCave/notCanon/DeadCavePart22.png" id="15_nevyh"]
 [ext_resource type="Texture2D" uid="uid://jl3tsd5aeg1f" path="res://World/DeadCave/notCanon/DeadCavePart23.png" id="16_hhr50"]
 [ext_resource type="Texture2D" uid="uid://grg6mtev7rhg" path="res://World/Jump/SaltoImage13.png" id="16_ny14h"]
+[ext_resource type="Texture2D" uid="uid://c5o1rhw6gip1f" path="res://World/Boxing/2dBoxDerechaRrapida15.png" id="16_o67lt"]
 [ext_resource type="Texture2D" uid="uid://dlpa2sqn2s2fy" path="res://World/Jump/SaltoImage2.png" id="16_qtqh7"]
 [ext_resource type="Texture2D" uid="uid://pvdvqwqkwcek" path="res://World/Jump/SaltoImage3.png" id="17_2wuci"]
 [ext_resource type="Texture2D" uid="uid://c02bk4lh1henc" path="res://World/DeadCave/notCanon/DeadCavePart24.png" id="17_8u4el"]
+[ext_resource type="Texture2D" uid="uid://mgfrt3fbdrfo" path="res://World/Boxing/2dBoxDerechaRrapida16.png" id="17_8xvhe"]
 [ext_resource type="Texture2D" uid="uid://bbqhh4d86klkf" path="res://World/Jump/SaltoImage15.png" id="18_3iwfv"]
 [ext_resource type="Texture2D" uid="uid://bv3ow2wesd17u" path="res://World/DeadCave/notCanon/DeadCavePart25.png" id="18_a5i73"]
 [ext_resource type="Texture2D" uid="uid://cgrnguarkbnvm" path="res://World/Jump/SaltoImage4.png" id="18_iruf7"]
+[ext_resource type="Texture2D" uid="uid://c4luqg06vymh6" path="res://World/Boxing/2dBoxDerechaRrapida17.png" id="18_yelk6"]
 [ext_resource type="Texture2D" uid="uid://lib4o0a8genu" path="res://World/DeadCave/notCanon/DeadCavePart26.png" id="19_j7swm"]
+[ext_resource type="Texture2D" uid="uid://dqhdxdd6lxqhy" path="res://World/Boxing/2dBoxDerechaRrapida18.png" id="19_v3rbc"]
 [ext_resource type="Texture2D" uid="uid://chuv1s0lbsnu2" path="res://World/Jump/SaltoImage17.png" id="20_1xqrm"]
 [ext_resource type="Texture2D" uid="uid://by2phxlyx0wea" path="res://World/DeadCave/notCanon/DeadCavePart27.png" id="20_bobas"]
 [ext_resource type="Texture2D" uid="uid://but4gubib1egs" path="res://World/DeadCave/notCanon/DeadCavePart28.png" id="21_vmuuc"]
@@ -93,8 +111,106 @@
 [ext_resource type="AudioStream" uid="uid://dy4cnouvvuxs2" path="res://Audio/109416__black-snow__sword-slice-07.wav" id="91_ro7of"]
 [ext_resource type="AudioStream" uid="uid://c8omxaaht1wu8" path="res://Audio/deadFall.mp3" id="92_dn2kn"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nevyh"]
+radius = 17.0
+height = 64.0
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_1jxqw"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_nevyh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_hhr50")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_hhr50")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_hhr50")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_hhr50")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_nevyh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_a5i73")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_j7swm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_bobas")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_vmuuc")
+}],
+"loop": false,
+"name": &"Boxing",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_nevyh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_hhr50")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_nevyh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_a5i73")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_j7swm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_bobas")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_vmuuc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_hhr50")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_hhe1y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_6jk4c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_8hr8l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_c2etn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_cgqxi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_api4a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_o67lt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_8xvhe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_yelk6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_v3rbc")
+}],
+"loop": false,
+"name": &"Boxing2",
+"speed": 20.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_2hmo1")
@@ -263,6 +379,47 @@ animations = [{
 "loop": true,
 "name": &"Fall",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_nevyh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_hhr50")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_hhe1y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_6jk4c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_8hr8l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_c2etn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_cgqxi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_api4a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_o67lt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_8xvhe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_yelk6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_v3rbc")
+}],
+"loop": true,
+"name": &"Heavy_Punch",
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -468,37 +625,74 @@ gradient = SubResource("Gradient_sc53x")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
+[sub_resource type="Animation" id="Animation_nevyh"]
+resource_name = "attack"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hhr50"]
+_data = {
+&"attack": SubResource("Animation_nevyh")
+}
+
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 3
 script = ExtResource("1_dw050")
-metadata/_edit_group_ = true
+MaxHealth = 10
+
+[node name="FistCollider" type="CollisionShape2D" parent="."]
+position = Vector2(43, -1)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_nevyh")
+disabled = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -3)
+position = Vector2(5, 11)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_1jxqw")
-animation = &"CanonDeadCave"
+animation = &"Boxing"
+frame = 8
+frame_progress = 0.414671
+offset = Vector2(-5, -7)
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 scale = Vector2(2, 2)
 shape = SubResource("CapsuleShape2D_dw050")
+metadata/_edit_lock_ = true
 
 [node name="StepSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("38_b88wv")
 volume_db = 1.5
+metadata/_edit_lock_ = true
 
 [node name="PasoSeco" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamOggVorbis_ny14h")
 volume_db = -19.775
+metadata/_edit_lock_ = true
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 energy = 0.3
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_ro7of")
 texture_scale = 4.0
+metadata/_edit_lock_ = true
 
 [node name="Garras" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("91_ro7of")
+metadata/_edit_lock_ = true
 
 [node name="FallDead" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("92_dn2kn")
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_hhr50")
+}
+autoplay = "attack"
+
+[node name="PlayerAttackBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerAttackBox"]
+position = Vector2(43, -1)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_nevyh")

@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://cc5aba8asstkv"]
+
+[ext_resource type="Texture2D" uid="uid://cc8lkawjdg001" path="res://BossRobot/FirstBoss/ProjectilePlasma/Plasma1.png" id="1_g4ry7"]
+[ext_resource type="Script" uid="uid://caj1gu3oio44r" path="res://BossProjectile.cs" id="1_ta3bn"]
+[ext_resource type="Texture2D" uid="uid://dhryx41r0wv35" path="res://BossRobot/FirstBoss/ProjectilePlasma/Plasma2.png" id="2_ta3bn"]
+[ext_resource type="Texture2D" uid="uid://cksoua0d0rren" path="res://BossRobot/FirstBoss/ProjectilePlasma/Plasma3.png" id="3_0srm8"]
+[ext_resource type="Texture2D" uid="uid://omcljk5knxia" path="res://BossRobot/FirstBoss/ProjectilePlasma/Plasma4.png" id="4_62sm5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ncgrc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_g4ry7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ta3bn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0srm8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_62sm5")
+}],
+"loop": true,
+"name": &"ProjectileMove",
+"speed": 9.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ta3bn"]
+radius = 27.0185
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ta3bn"]
+lifetime_randomness = 0.5
+particle_flag_disable_z = true
+gravity = Vector3(0, 98, 0)
+scale_min = 0.5
+color = Color(0.941176, 0.415686, 0, 1)
+
+[node name="BossProjectile" type="Area2D"]
+collision_layer = 8
+collision_mask = 3
+script = ExtResource("1_ta3bn")
+Lifetime = 3.0
+HomingEnabled = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ncgrc")
+animation = &"ProjectileMove"
+frame = 3
+frame_progress = 0.350969
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ta3bn")
+debug_color = Color(0.981538, 0, 0.370186, 0.42)
+
+[node name="Trail" type="GPUParticles2D" parent="."]
+scale = Vector2(0.5, 0.5)
+trail_lifetime = 0.5
+process_material = SubResource("ParticleProcessMaterial_ta3bn")

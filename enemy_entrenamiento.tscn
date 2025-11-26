@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dp7dh2kmy3rk1"]
+
+[ext_resource type="Script" uid="uid://cfexr2rgcidta" path="res://EnemyEntrenamiento.cs" id="1_njuh7"]
+[ext_resource type="Texture2D" uid="uid://crot6oxv0i21s" path="res://Audio/Level1/fondo/paja.png" id="2_8tucm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b4hjb"]
+radius = 272.971
+
+[node name="EnemyEntrenamiento" type="CharacterBody2D"]
+script = ExtResource("1_njuh7")
+MaxHealth = 20
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_8tucm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_b4hjb")
