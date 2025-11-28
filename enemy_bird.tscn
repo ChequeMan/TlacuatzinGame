@@ -107,7 +107,8 @@ script = ExtResource("1_3qmcl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_5uimy")
-animation = &"idle"
+animation = &"death"
+frame_progress = 0.392958
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 131

@@ -7,8 +7,8 @@ public partial class EnemyBird : CharacterBody2D
 	[Export] public int FlySpeed = 150;
 	[Export] public int ChaseSpeed = 250;
 	[Export] public float PatrolRadius = 200f;
-	[Export] public float HoverAmplitude = 30f; // Amplitud del movimiento de aleteo
-	[Export] public float HoverFrequency = 2f; // Velocidad del aleteo
+	[Export] public float HoverAmplitude = 30f;
+	[Export] public float HoverFrequency = 2f;
 	
 	// Propiedades de combate
 	[Export] public float AggroRange = 350f;
@@ -23,8 +23,8 @@ public partial class EnemyBird : CharacterBody2D
 	[Export] public float DivePrepTime = 0.5f;
 	[Export] public float DiveRecoveryTime = 1f;
 	[Export] public float AttackCooldown = 2f;
-	[Export] public float RetreatHeight = 200f; // Altura a la que vuela después de atacar
-	[Export] public float RetreatSpeed = 250f; // Velocidad al volar hacia arriba
+	[Export] public float RetreatHeight = 200f;
+	[Export] public float RetreatSpeed = 250f;
 	
 	// Patrón de vuelo
 	public enum FlightPattern { Horizontal, Circular, Hovering }
@@ -52,9 +52,9 @@ public partial class EnemyBird : CharacterBody2D
 	private bool _isAttacking = false;
 	private bool _isDiving = false;
 	private bool _isPreparingDive = false;
-	private bool _isRetreating = false; // Nuevo: volando alto después de atacar
-	private bool _attackHitPlayer = false; // Rastrear si el ataque conectó
-	private Vector2 _retreatTarget; // Posición alta a la que volar
+	private bool _isRetreating = false;
+	private bool _attackHitPlayer = false;
+	private Vector2 _retreatTarget;
 	private float _diveTimer = 0f;
 	private float _attackCooldownTimer = 0f;
 	private bool _canAttack = true;
@@ -184,7 +184,7 @@ public partial class EnemyBird : CharacterBody2D
 		SetCollisionLayerValue(1, false);
 		SetCollisionMaskValue(1, false);
 		
-		anim.Play("death"); // Cambia según tus animaciones
+		anim.Play("death");
 		
 		// Caída con gravedad
 		Velocity = new Vector2(_knockbackVelocity.X * 0.5f, -100);
@@ -201,7 +201,7 @@ public partial class EnemyBird : CharacterBody2D
 			{
 				GD.Print($"💥 Pájaro golpeó al jugador causando {AttackDamage} de daño");
 				player.TakeDamage(AttackDamage);
-				_attackHitPlayer = true; // Marcamos que el ataque conectó
+				_attackHitPlayer = true;
 			}
 		}
 	}
@@ -222,7 +222,7 @@ public partial class EnemyBird : CharacterBody2D
 	{
 		if (body.IsInGroup("Player"))
 		{
-			_detectionTimer = 3f; // Más tiempo antes de perder al jugador
+			_detectionTimer = 3f;
 		}
 	}
 	
@@ -240,7 +240,7 @@ public partial class EnemyBird : CharacterBody2D
 				// Si golpeó, cooldown normal y vuela alto
 				_attackCooldownTimer = AttackCooldown;
 				_canAttack = false;
-				_attackHitPlayer = false; // Reset
+				_attackHitPlayer = false;
 				
 				_isRetreating = true;
 				_retreatTarget = new Vector2(GlobalPosition.X, _startPosition.Y - RetreatHeight);
@@ -249,19 +249,17 @@ public partial class EnemyBird : CharacterBody2D
 			else
 			{
 				// Si falló, intenta de nuevo rápidamente
-				_attackCooldownTimer = 0.3f; // Cooldown muy corto
+				_attackCooldownTimer = 0.3f;
 				_canAttack = false;
 				
 				_isRetreating = true;
-				_retreatTarget = new Vector2(GlobalPosition.X, _startPosition.Y - RetreatHeight * 0.6f); // No vuela tan alto
+				_retreatTarget = new Vector2(GlobalPosition.X, _startPosition.Y - RetreatHeight * 0.6f);
 				GD.Print("❌ Ataque falló, reintentando rápido!");
 			}
 		}
 		else if (anim.Animation == "hurt")
 		{
 			_isHurt = false;
-			_isKnockedBack = false;
-			// La retirada ya está activada en TakeDamage
 		}
 		else if (anim.Animation == "death")
 		{
@@ -272,7 +270,7 @@ public partial class EnemyBird : CharacterBody2D
 	private void UpdateFacingDirection(bool shouldFaceRight)
 	{
 		_facingRight = shouldFaceRight;
-		anim.FlipH = _facingRight; // Ajusta según tu sprite
+		anim.FlipH = _facingRight;
 		
 		float scaleX = _facingRight ? -1 : 1;
 		AlertBox.Scale = new Vector2(scaleX, 1);
@@ -282,12 +280,11 @@ public partial class EnemyBird : CharacterBody2D
 	
 	private Vector2 GetPatrolPosition(float delta)
 	{
-		_hoverTime += (float)delta;
+		_hoverTime += delta;
 		
 		switch (PatrolPattern)
 		{
 			case FlightPattern.Horizontal:
-				// Movimiento horizontal con aleteo vertical
 				float hoverOffset = Mathf.Sin(_hoverTime * HoverFrequency) * HoverAmplitude;
 				
 				if (_movingRight)
@@ -315,8 +312,7 @@ public partial class EnemyBird : CharacterBody2D
 				break;
 				
 			case FlightPattern.Circular:
-				// Movimiento circular
-				_patrolAngle += (float)delta * 0.5f;
+				_patrolAngle += delta * 0.5f;
 				Vector2 circlePos = _startPosition + new Vector2(
 					Mathf.Cos(_patrolAngle) * PatrolRadius,
 					Mathf.Sin(_patrolAngle) * PatrolRadius * 0.5f
@@ -325,7 +321,6 @@ public partial class EnemyBird : CharacterBody2D
 				return direction * FlySpeed;
 				
 			case FlightPattern.Hovering:
-				// Quedarse cerca de la posición inicial con movimiento de aleteo
 				Vector2 toStart = (_startPosition - GlobalPosition);
 				float hover = Mathf.Sin(_hoverTime * HoverFrequency) * HoverAmplitude;
 				return new Vector2(toStart.X * 0.5f, hover);
@@ -342,6 +337,25 @@ public partial class EnemyBird : CharacterBody2D
 			Velocity = new Vector2(Velocity.X, Velocity.Y + 500 * (float)delta);
 			MoveAndSlide();
 			return;
+		}
+		
+		// Verificar si está cayendo y tocó el suelo o colisionó
+		if (_isKnockedBack && IsOnFloor())
+		{
+			_isKnockedBack = false;
+			_isRetreating = true;
+			_retreatTarget = new Vector2(GlobalPosition.X, _startPosition.Y - RetreatHeight);
+			GD.Print("🦅 Pájaro tocó el suelo, subiendo!");
+		}
+		
+		// Verificar colisión con paredes durante knockback
+		if (_isKnockedBack && IsOnWall())
+		{
+			_isKnockedBack = false;
+			_knockbackVelocity = Vector2.Zero;
+			_isRetreating = true;
+			_retreatTarget = new Vector2(GlobalPosition.X, _startPosition.Y - RetreatHeight);
+			GD.Print("🦅 Pájaro chocó con pared, subiendo!");
 		}
 		
 		// Actualizar cooldowns
@@ -378,7 +392,6 @@ public partial class EnemyBird : CharacterBody2D
 			if (_hurtTimer <= 0)
 			{
 				_isHurt = false;
-				_isKnockedBack = false;
 			}
 			
 			// Durante el estado herido, volar hacia arriba
@@ -396,8 +409,10 @@ public partial class EnemyBird : CharacterBody2D
 			}
 			else if (_isKnockedBack)
 			{
+				// Aplicar knockback con gravedad
 				Velocity = _knockbackVelocity;
-				_knockbackVelocity = _knockbackVelocity.Lerp(Vector2.Zero, 0.15f);
+				_knockbackVelocity.Y += 500 * (float)delta;
+				_knockbackVelocity.X = Mathf.Lerp(_knockbackVelocity.X, 0, 0.1f);
 			}
 			
 			MoveAndSlide();
@@ -430,7 +445,6 @@ public partial class EnemyBird : CharacterBody2D
 			// Estado de ataque en picada
 			else if (_isDiving)
 			{
-				// Moverse hacia el objetivo de la picada
 				Vector2 directionToDive = (_diveTarget - GlobalPosition).Normalized();
 				Velocity = directionToDive * DiveSpeed;
 				AttackBox.Monitoring = true;
@@ -440,7 +454,6 @@ public partial class EnemyBird : CharacterBody2D
 				{
 					_isDiving = false;
 					AttackBox.Monitoring = false;
-					// La animación finished se encargará de iniciar la retirada
 				}
 			}
 			else if (_isPreparingDive)
@@ -456,7 +469,7 @@ public partial class EnemyBird : CharacterBody2D
 					_isPreparingDive = false;
 					_isDiving = true;
 					_isAttacking = true;
-					_attackHitPlayer = false; // Reset antes de atacar
+					_attackHitPlayer = false;
 					_diveTarget = _player.GlobalPosition;
 					anim.Play("dive");
 					GD.Print("🦅 ¡Pájaro en picada!");
@@ -498,7 +511,7 @@ public partial class EnemyBird : CharacterBody2D
 				UpdateFacingDirection(Velocity.X > 0);
 			}
 			
-			anim.Play("fly"); // o "walk"
+			anim.Play("fly");
 		}
 		
 		MoveAndSlide();

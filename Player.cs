@@ -178,17 +178,34 @@ public partial class Player : CharacterBody2D
 	}
 
 	private void OnPlayerIsDead()
+{
+	// Si ya está muerto, sal
+	if (currentState == PlayerState.Dead) return;
+
+	currentHealth = 0;
+	_inputEnabled = false;
+	
+	if (Camara != null)
+		Camara.StartZoom();
+		
+	Garras.Play();
+	anim.Play("CanonDeadCave");
+	
+	if (!Garras.Playing)
+		DeadFall.Play();
+		
+	ChangeState(PlayerState.Dead);
+	
+	// ✅ NOVEDAD CRUCIAL: Llamar al CheckpointManager para iniciar el proceso de Respawn
+	if(CheckpointManager.Instance != null)
 	{
-		currentHealth = 0;
-		_inputEnabled = false;
-		if (Camara != null)
-			Camara.StartZoom();
-		Garras.Play();
-		anim.Play("CanonDeadCave");
-		if (!Garras.Playing)
-			DeadFall.Play();
-		ChangeState(PlayerState.Dead);
+		CheckpointManager.Instance.RespawnPlayer(this);
 	}
+	else
+	{
+		GD.PrintErr("CheckpointManager no encontrado! Agrega CheckpointManger como Autoload.");
+	}
+}
 	
 	public void Die()
 	{

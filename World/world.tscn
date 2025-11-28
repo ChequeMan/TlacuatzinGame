@@ -254,7 +254,7 @@ tile_map_data = PackedByteArray("AAAAAA4AFAALAAoAAAABAA4AFAALAAoAAAACAA4AFAALAAo
 tile_set = ExtResource("1_62w18")
 
 [node name="Player" parent="." groups=["Player"] instance=ExtResource("2_8a836")]
-position = Vector2(343, 803)
+position = Vector2(141, 816)
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -522,7 +522,7 @@ RangedAttackRange = 2000.0
 AggroRange = 1500.0
 
 [node name="Checkpoint" parent="." instance=ExtResource("26_yfuda")]
-position = Vector2(148, 832)
+position = Vector2(172, 832)
 
 [node name="Checkpoint2" parent="." instance=ExtResource("26_yfuda")]
 position = Vector2(8915, 8708)
@@ -541,6 +541,9 @@ BaseKnockbackForce = 200.0
 [node name="SceneTransitionWithVideo" parent="." instance=ExtResource("6_3ql07")]
 position = Vector2(40339, 8652)
 scale = Vector2(10, 10)
+
+[node name="Checkpoint4" parent="." instance=ExtResource("26_yfuda")]
+position = Vector2(26315, 8575)
 
 [connection signal="body_entered" from="Snow/SnowArea" to="Snow/SnowArea" method="_on_body_entered"]
 [connection signal="body_exited" from="Snow/SnowArea" to="Snow/SnowArea" method="_on_body_exited"]
