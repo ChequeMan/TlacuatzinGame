@@ -15,13 +15,19 @@ public partial class Camera2d : Camera2D
 	[Export] public float SpeedAdaptThreshold = 300.0f;
 	
 	private bool isZooming = false;
-
+	
+	
+	
+	private Vector2 normalZoom = new Vector2(1f, 1f);//new
 
 	public override void _Ready()
 	{
 		// Activa los límites de la cámara
 		LimitSmoothed = true;
+		//guardar Zoom Inicial
+		normalZoom = Zoom; ////new 
 	}
+	
 	
 	public void StartZoom(){
 		if(isZooming) return;
@@ -90,5 +96,20 @@ public partial class Camera2d : Camera2D
 
 	// Regresa a la posición original
 	GlobalPosition = originalPosition;
+}
+///metodo nuevo
+public void ResetZoom()
+{
+	if(!isZooming) return;
+	
+	isZooming = false;
+	
+	var tween = GetTree().CreateTween();
+	tween.TweenProperty(this, "zoom", normalZoom, 0.3f);
+	
+	tween.SetEase(Tween.EaseType.InOut);
+	tween.SetTrans(Tween.TransitionType.Quad);
+	
+	GD.Print("Camara reseteada");
 }
 }

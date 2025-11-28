@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cco3eae4ptrhg"]
+
+[ext_resource type="Script" uid="uid://pa84kepeilat" path="res://SceneTransitionWithVideo.cs" id="1_2ob0s"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2ob0s"]
+
+[node name="SceneTransitionWithVideo" type="Area2D"]
+script = ExtResource("1_2ob0s")
+PlayVideo = true
+VideoPath = "res://Videos/cienmaticFinal.ogv"
+NextScenePath = "res://main_menu.tscn"
+TransitionMessage = ""
+RequireInput = false
+CanSkipVideo = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_2ob0s")

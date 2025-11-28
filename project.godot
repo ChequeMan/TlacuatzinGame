@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="desde0"
-run/main_scene="uid://cf86k587mr1t0"
+run/main_scene="uid://pqnd1wmbtm0u"
 config/features=PackedStringArray("4.4", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+CheckpointManager="*res://CheckpointManager.cs"
 
 [display]
 

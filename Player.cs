@@ -209,7 +209,18 @@ public partial class Player : CharacterBody2D
 		if (Camara != null)
 			Camara.StartZoom();
 		
-		GD.Print("Player ha muerto");
+		//GD.Print("Player ha muerto");
+		GD.Print($"💀 Player ha muerto en posición: {GlobalPosition}");
+		
+		//////////novedad checkpoint
+		if(CheckpointManager.Instance != null)
+		{
+			CheckpointManager.Instance.RespawnPlayer(this);
+		}
+		else
+		{
+			GD.PrintErr("CheckpointManager no encontrado! Agrega CheckpointManger como Autoload. ");
+		}
 	}
 	
 	public bool IsAttacking()
@@ -685,5 +696,35 @@ public partial class Player : CharacterBody2D
 		{
 			if (stepSound.Playing) stepSound.Stop();
 		}
+	}
+	public void ResetPlayerState()
+	{
+		// Resetear estado de muerte
+		currentState = PlayerState.Idle;
+		_inputEnabled = true;
+		isInvulnerable = false;
+		invulnerabilityTimer = 0f;
+		
+		// Resetear animación
+		if(anim != null)
+		{
+			anim.Modulate = new Color(1, 1, 1, 1.0f);
+			anim.Play(idleTlacuachil);
+		}
+		// Resetear cámara si tienes el método
+		//if (Camara != null && Camara.HasMethod("ResetZoom"))
+		if(Camara != null)
+		Camara.ResetZoom();//comentar de nuevo si crashea
+	
+	// Resetear mecánicas
+	isDashing = false;
+	dashTimer = 0f;
+	dashAvailable = true;
+	isAttacking = false;
+	wasAirAttacking = false;
+	usedDoubleJump = false;
+	framesSinceGrounded = 0;
+	
+	GD.Print("Estado del jugador completamente reseteado");
 	}
 }
